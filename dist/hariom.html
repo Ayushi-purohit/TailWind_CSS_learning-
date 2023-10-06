@@ -1,0 +1,447 @@
+[11:42 AM, 10/6/2023] Hariom Sir: import React from "react";
+import Logo from "../assets/Logo.svg";
+import Barchart from "../assets/bar-chart-2.svg";
+import Layers from "../assets/3-layers.svg";
+import Users from "../assets/users.svg";
+import Message from "../assets/solar_chat-line-broken.svg";
+import Setting from "../assets/settings.svg";
+import Avatar from "../assets/Avatar.png";
+import Logout from "../assets/log-out.svg";
+import Search from "../assets/Search Icon.svg";
+import Notification from "../assets/notification.svg";
+import Plus from "../assets/plus.svg";
+import Sort from "../assets/octicon_sort-asc-24.svg";
+import Filter from "../assets/mi_filter.svg";
+import img1 from '../assets/img1.png'
+import img2 from '../assets/img2.png'
+import img3 from '../assets/img3.png'
+import img4 from '../assets/img4.png'
+import threedot from '../assets/threedot.svg'
+
+const cardData=[
+    {
+        id:1,
+        text:"Mechanically recycled polymers that perform like virgin polymers.",
+        icon:img1
+    },
+    {
+        id:2,
+        text:"Recyclable materials, additives, or coatings for monolayer barriers",
+        icon:img2
+    },
+    {
+        id:3,
+        text:"Screening system to identify SGLT1, GLUT5 inhibitors and activators",
+        icon:img3
+    },
+    {
+        id:4,
+        text:"Bio-based resins and extrusion technologies for rigid plastic packaging",
+        icon:img4
+    }
+]
+
+const DashBoard = () => {
+    return (
+        <div className="w-full h-screen text-white bg-[#1F2129] flex">
+            {/* first main section */}
+            <div className="flex h-screen fixed flex-col gap-3 w-[20%] py-4 px-8 text-sm border1 ">
+                {/* Logo div  */}
+                <div>
+                    <img src={Logo} alt="CRM" loading="lazy" />
+                </div>
+
+                {/* Navlinks */}
+                <div className="flex h-full flex-col justify-between">
+                    <div className="flex flex-col justify-between  w-full">
+                        <div className="p-3 bg-[#101215] flex items-center rounded-md gap-3">
+                            <img src={Barchart} alt="Reslink" loading="lazy" />
+                            <p>DashBoard</p>
+                        </div>
+
+                        <div className="p-3  flex items-center rounded-md gap-3">
+                            <img src={Layers} alt="Reslink" loading="lazy" />
+                            <p>Projects</p>
+                        </div>
+
+                        <div className="p-3 flex items-center rounded-md gap-3">
+                            <img src={Users} alt="Reslink" loading="lazy" />
+                            <p>Staffing</p>
+                        </div>
+
+                        <div className="p-3 flex items-center rounded-md gap-3">
+                            <img src={Message} alt="Reslink" loading="lazy" />
+                            <p>Messages</p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col ">
+                        <div className="p-3  flex items-center rounded-md gap-3">
+                            <img src={Barchart} alt="Reslink" loading="lazy" />
+                            <p>Support</p>
+                        </div>
+
+                        <div className="p-3  flex items-center rounded-md gap-3">
+                            <img src={Setting} alt="Reslink" loading="lazy" />
+                            <p>Settings</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="h-[1px] w-full bordertop"></div>
+
+                {/* user profile div  */}
+                <div className="flex gap-2  text-sm">
+                    <img
+                        src={Avatar}
+                        alt="Reslink"
+                        loading="lazy"
+                        className="rounded-full"
+                    />
+                    <div>
+                        <p className="font-bold">Olivia Rhye</p>
+                        <p>olivia@untitledui.com</p>
+                    </div>
+                    <img src={Logout} alt="Reslink" loading="lazy" />
+                </div>
+            </div>
+
+            {/* second main section */}
+            <div className="ml-[20%] w-[80%] text-sm pt-8">
+                {/* heading section  */}
+                <div className="w-full flex justify-between px-8">
+                    <div className="flex gap-2 bg-[#101215] px-4 py-2 rounded-3xl">
+                        <img src={Search} alt="Reslink" loading="lazy" />
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            className="appearance-none bg-transparent focus:outline-none w-[250px] pl-2"
+                        />
+                    </div>
+                    <div className="flex gap-2">
+                        <img src={Notification} alt="Reslink" loading="lazy" />
+                        <div className="flex gap-2 px-5 py-2 bg-[#3FA268] rounded-3xl max-w-max">
+                            <img src={Plus} alt="Reslink" loading="lazy" />
+                            <p>Create New Project</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* welcome section  */}
+                <div className="px-8 py-8 flex items-center justify-between">
+                    <div>
+                        <p className="text-[30px] leading-9">Projects</p>
+                        <p className="text-[16px] leading-6">
+                            Outsource, track and manage your projects here.
+                        </p>
+                    </div>
+                    <div className="flex gap-6">
+                        <div className="py-3 px-4 bg-[#101215] flex gap-2 rounded-lg">
+                            <p>Sort</p>
+                            <img src={Sort} alt="reslink" loading="lazy" />
+                        </div>
+                        <div className="py-3 px-4 bg-[#101215] flex gap-2 rounded-lg">
+                            <p>Filters</p>
+                            <img src={Filter} alt="reslink" loading="lazy" />
+                        </div>
+                    </div>
+                </div>
+
+                {/* bottom card section  */}
+                <div className="flex gap-3 px-8 py-4 pb-8 flex-wrap items-center">
+                    {cardData.map((data) => (
+                        <div key={data.id} className="w-[47%] min-w-[350px] smallCard px-7 pt-8 flex gap-4 flex-col ">
+                            <div className="flex justify-between">
+                                <div className="flex gap-3 text-base">
+                                <img src={data.icon} alt="reslink" loading="lazy" width={44}/>
+                                <p>{data.text}</p>
+                                </div>
+                                <img src={threedot} alt="reslink" loading="lazy"/>
+                            </div>
+                            <div className="flex gap-2">
+                                <p className="bg-[#2C3E35] py-[2px] px-4 rounded-2xl">Materials</p>
+                                <p className="bg-[#2C3E35] py-[2px] px-4 rounded-2xl">Biology</p>
+                                <p className="bg-[#2C3E35] py-[2px] px-4 rounded-2xl">Medicine</p>
+                            </div>
+                            <div className="bordertop flex justify-between items-center py-4">
+                                <div className="flex gap-3 items-center">
+                                    <div className="w-3 h-3 bg-[#2C3E35] rounded-full"></div>
+                                    <p className="text-[14px]">Resume review</p>
+                                </div>
+                                <div className="text-[14px]">
+                                Uploaded on: 12th Aug, 2023
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* footer section  */}
+                <div className="fixed bottom-0 w-full">
+                    <p className="text-sm opacity-40 bordertop px-8 py-4 ">
+                        Copyright © 2023. Reslink. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default DashBoard;
+[11:43 AM, 10/6/2023] Hariom Sir: @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.smallCard {
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10.399999618530273px);
+}
+
+.border1{
+    border-right: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.bordertop{
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.borderbottom{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}[11:42 AM, 10/6/2023] Hariom Sir: import React from "react";
+import Logo from "../assets/Logo.svg";
+import Barchart from "../assets/bar-chart-2.svg";
+import Layers from "../assets/3-layers.svg";
+import Users from "../assets/users.svg";
+import Message from "../assets/solar_chat-line-broken.svg";
+import Setting from "../assets/settings.svg";
+import Avatar from "../assets/Avatar.png";
+import Logout from "../assets/log-out.svg";
+import Search from "../assets/Search Icon.svg";
+import Notification from "../assets/notification.svg";
+import Plus from "../assets/plus.svg";
+import Sort from "../assets/octicon_sort-asc-24.svg";
+import Filter from "../assets/mi_filter.svg";
+import img1 from '../assets/img1.png'
+import img2 from '../assets/img2.png'
+import img3 from '../assets/img3.png'
+import img4 from '../assets/img4.png'
+import threedot from '../assets/threedot.svg'
+
+const cardData=[
+    {
+        id:1,
+        text:"Mechanically recycled polymers that perform like virgin polymers.",
+        icon:img1
+    },
+    {
+        id:2,
+        text:"Recyclable materials, additives, or coatings for monolayer barriers",
+        icon:img2
+    },
+    {
+        id:3,
+        text:"Screening system to identify SGLT1, GLUT5 inhibitors and activators",
+        icon:img3
+    },
+    {
+        id:4,
+        text:"Bio-based resins and extrusion technologies for rigid plastic packaging",
+        icon:img4
+    }
+]
+
+const DashBoard = () => {
+    return (
+        <div className="w-full h-screen text-white bg-[#1F2129] flex">
+            {/* first main section */}
+            <div className="flex h-screen fixed flex-col gap-3 w-[20%] py-4 px-8 text-sm border1 ">
+                {/* Logo div  */}
+                <div>
+                    <img src={Logo} alt="CRM" loading="lazy" />
+                </div>
+
+                {/* Navlinks */}
+                <div className="flex h-full flex-col justify-between">
+                    <div className="flex flex-col justify-between  w-full">
+                        <div className="p-3 bg-[#101215] flex items-center rounded-md gap-3">
+                            <img src={Barchart} alt="Reslink" loading="lazy" />
+                            <p>DashBoard</p>
+                        </div>
+
+                        <div className="p-3  flex items-center rounded-md gap-3">
+                            <img src={Layers} alt="Reslink" loading="lazy" />
+                            <p>Projects</p>
+                        </div>
+
+                        <div className="p-3 flex items-center rounded-md gap-3">
+                            <img src={Users} alt="Reslink" loading="lazy" />
+                            <p>Staffing</p>
+                        </div>
+
+                        <div className="p-3 flex items-center rounded-md gap-3">
+                            <img src={Message} alt="Reslink" loading="lazy" />
+                            <p>Messages</p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col ">
+                        <div className="p-3  flex items-center rounded-md gap-3">
+                            <img src={Barchart} alt="Reslink" loading="lazy" />
+                            <p>Support</p>
+                        </div>
+
+                        <div className="p-3  flex items-center rounded-md gap-3">
+                            <img src={Setting} alt="Reslink" loading="lazy" />
+                            <p>Settings</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="h-[1px] w-full bordertop"></div>
+
+                {/* user profile div  */}
+                <div className="flex gap-2  text-sm">
+                    <img
+                        src={Avatar}
+                        alt="Reslink"
+                        loading="lazy"
+                        className="rounded-full"
+                    />
+                    <div>
+                        <p className="font-bold">Olivia Rhye</p>
+                        <p>olivia@untitledui.com</p>
+                    </div>
+                    <img src={Logout} alt="Reslink" loading="lazy" />
+                </div>
+            </div>
+
+            {/* second main section */}
+            <div className="ml-[20%] w-[80%] text-sm pt-8">
+                {/* heading section  */}
+                <div className="w-full flex justify-between px-8">
+                    <div className="flex gap-2 bg-[#101215] px-4 py-2 rounded-3xl">
+                        <img src={Search} alt="Reslink" loading="lazy" />
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            className="appearance-none bg-transparent focus:outline-none w-[250px] pl-2"
+                        />
+                    </div>
+                    <div className="flex gap-2">
+                        <img src={Notification} alt="Reslink" loading="lazy" />
+                        <div className="flex gap-2 px-5 py-2 bg-[#3FA268] rounded-3xl max-w-max">
+                            <img src={Plus} alt="Reslink" loading="lazy" />
+                            <p>Create New Project</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* welcome section  */}
+                <div className="px-8 py-8 flex items-center justify-between">
+                    <div>
+                        <p className="text-[30px] leading-9">Projects</p>
+                        <p className="text-[16px] leading-6">
+                            Outsource, track and manage your projects here.
+                        </p>
+                    </div>
+                    <div className="flex gap-6">
+                        <div className="py-3 px-4 bg-[#101215] flex gap-2 rounded-lg">
+                            <p>Sort</p>
+                            <img src={Sort} alt="reslink" loading="lazy" />
+                        </div>
+                        <div className="py-3 px-4 bg-[#101215] flex gap-2 rounded-lg">
+                            <p>Filters</p>
+                            <img src={Filter} alt="reslink" loading="lazy" />
+                        </div>
+                    </div>
+                </div>
+
+                {/* bottom card section  */}
+                <div className="flex gap-3 px-8 py-4 pb-8 flex-wrap items-center">
+                    {cardData.map((data) => (
+                        <div key={data.id} className="w-[47%] min-w-[350px] smallCard px-7 pt-8 flex gap-4 flex-col ">
+                            <div className="flex justify-between">
+                                <div className="flex gap-3 text-base">
+                                <img src={data.icon} alt="reslink" loading="lazy" width={44}/>
+                                <p>{data.text}</p>
+                                </div>
+                                <img src={threedot} alt="reslink" loading="lazy"/>
+                            </div>
+                            <div className="flex gap-2">
+                                <p className="bg-[#2C3E35] py-[2px] px-4 rounded-2xl">Materials</p>
+                                <p className="bg-[#2C3E35] py-[2px] px-4 rounded-2xl">Biology</p>
+                                <p className="bg-[#2C3E35] py-[2px] px-4 rounded-2xl">Medicine</p>
+                            </div>
+                            <div className="bordertop flex justify-between items-center py-4">
+                                <div className="flex gap-3 items-center">
+                                    <div className="w-3 h-3 bg-[#2C3E35] rounded-full"></div>
+                                    <p className="text-[14px]">Resume review</p>
+                                </div>
+                                <div className="text-[14px]">
+                                Uploaded on: 12th Aug, 2023
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* footer section  */}
+                <div className="fixed bottom-0 w-full">
+                    <p className="text-sm opacity-40 bordertop px-8 py-4 ">
+                        Copyright © 2023. Reslink. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+<!-- export default DashBoard;
+[11:43 AM, 10/6/2023] Hariom Sir: @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.smallCard {
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10.399999618530273px);
+}
+
+.border1{
+    border-right: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.bordertop{
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.borderbottom{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+} -->
